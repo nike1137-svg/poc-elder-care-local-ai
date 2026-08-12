@@ -1,0 +1,28 @@
+[
+  {
+    "audio": "data/audio/u13.m4a",
+    "ok": true,
+    "transcript": "속이 좀 안 좋아서 아침을 걸렀어. 죽이라도 좀 써 먹을까 싶다.",
+    "signal_count": 2,
+    "concern_count": 2,
+    "script": "오늘의 대화 요약입니다. 확인이 필요한 신호가 2건 있습니다. 건강 쪽 소화기 이상, 식사 쪽 결식. 이렇게 말씀하셨습니다. 속이 좀 안 좋아서 아침을 걸렀어. 이 안내는 의학적 진단이 아닙니다. 참고로만 들어주세요.",
+    "output": "/home/marcus/다운로드/api_문제해/메인퀘스트2/results/voice/u13_report.wav",
+    "synth_sec": 1.04,
+    "audio_sec": 17.12,
+    "realtime_factor": 0.061,
+    "external_requests": 0
+  },
+  {
+    "audio": "data/audio/u16.m4a",
+    "ok": true,
+    "transcript": "어지러워서 오늘은 그냥 누워 있었어, 일어나면 핑돌더라고",
+    "signal_count": 2,
+    "concern_count": 2,
+    "script": "오늘의 대화 요약입니다. 확인이 필요한 신호가 2건 있습니다. 건강 쪽 어지럼증, 기분 쪽 활동 저하. 이렇게 말씀하셨습니다. 어지러워서 오늘은 그냥 누워 있었어, 일어나면 핑돌더라고 이 안내는 의학적 진단이 아닙니다. 참고로만 들어주세요.",
+    "output": "/home/marcus/다운로드/api_문제해/메인퀘스트2/results/voice/u16_report.wav",
+    "synth_sec": 0.881,
+    "audio_sec": 19.16,
+    "realtime_factor": 0.046,
+    "external_requests": 0
+  }
+]

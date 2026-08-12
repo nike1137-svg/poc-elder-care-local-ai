@@ -1,0 +1,78 @@
+[
+  {
+    "ok": true,
+    "image": "data/images/person_01.png",
+    "output": "/home/marcus/다운로드/api_문제해/메인퀘스트2/results/images/person_01_masked.png",
+    "detections": [
+      {
+        "label": "person",
+        "confidence": 0.833,
+        "box": [
+          35,
+          19,
+          510,
+          510
+        ]
+      }
+    ],
+    "masked_count": 1,
+    "detect_sec": 2.702,
+    "segment_sec": 2.279,
+    "external_requests": 0,
+    "task": "mask"
+  },
+  {
+    "ok": true,
+    "image": "data/images/person_02.png",
+    "output": "/home/marcus/다운로드/api_문제해/메인퀘스트2/results/images/person_02_masked.png",
+    "detections": [
+      {
+        "label": "person",
+        "confidence": 0.908,
+        "box": [
+          1,
+          20,
+          493,
+          509
+        ]
+      },
+      {
+        "label": "person",
+        "confidence": 0.827,
+        "box": [
+          302,
+          16,
+          511,
+          494
+        ]
+      }
+    ],
+    "masked_count": 2,
+    "detect_sec": 0.141,
+    "segment_sec": 1.616,
+    "external_requests": 0,
+    "task": "mask"
+  },
+  {
+    "ok": true,
+    "image": "data/images/person_03.png",
+    "output": "/home/marcus/다운로드/api_문제해/메인퀘스트2/results/images/person_03_masked.png",
+    "detections": [
+      {
+        "label": "person",
+        "confidence": 0.908,
+        "box": [
+          78,
+          17,
+          307,
+          511
+        ]
+      }
+    ],
+    "masked_count": 1,
+    "detect_sec": 0.147,
+    "segment_sec": 1.792,
+    "external_requests": 0,
+    "task": "mask"
+  }
+]

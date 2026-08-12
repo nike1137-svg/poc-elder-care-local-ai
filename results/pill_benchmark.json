@@ -1,0 +1,68 @@
+{
+  "summary": {
+    "count": 7,
+    "exact": 5,
+    "within_1": 7,
+    "mae": 0.286,
+    "relative_error": 0.0298
+  },
+  "note": "정답을 아는 합성 이미지로 측정했다. 실제 사진에서는 조명·그림자·겹침 때문에 이보다 나쁠 것이다.",
+  "rows": [
+    {
+      "id": "bench_00",
+      "truth": 0,
+      "predicted": 0,
+      "error": 0,
+      "segment_sec": 7.729,
+      "output": "/home/marcus/다운로드/api_문제해/메인퀘스트2/results/images/bench_00_pills.png"
+    },
+    {
+      "id": "bench_01",
+      "truth": 1,
+      "predicted": 1,
+      "error": 0,
+      "segment_sec": 0.33,
+      "output": "/home/marcus/다운로드/api_문제해/메인퀘스트2/results/images/bench_01_pills.png"
+    },
+    {
+      "id": "bench_02",
+      "truth": 3,
+      "predicted": 3,
+      "error": 0,
+      "segment_sec": 0.328,
+      "output": "/home/marcus/다운로드/api_문제해/메인퀘스트2/results/images/bench_02_pills.png"
+    },
+    {
+      "id": "bench_03",
+      "truth": 6,
+      "predicted": 7,
+      "error": 1,
+      "segment_sec": 0.322,
+      "output": "/home/marcus/다운로드/api_문제해/메인퀘스트2/results/images/bench_03_pills.png"
+    },
+    {
+      "id": "bench_04",
+      "truth": 10,
+      "predicted": 10,
+      "error": 0,
+      "segment_sec": 0.347,
+      "output": "/home/marcus/다운로드/api_문제해/메인퀘스트2/results/images/bench_04_pills.png"
+    },
+    {
+      "id": "bench_05",
+      "truth": 15,
+      "predicted": 15,
+      "error": 0,
+      "segment_sec": 0.336,
+      "output": "/home/marcus/다운로드/api_문제해/메인퀘스트2/results/images/bench_05_pills.png"
+    },
+    {
+      "id": "bench_06",
+      "truth": 24,
+      "predicted": 25,
+      "error": 1,
+      "segment_sec": 0.336,
+      "output": "/home/marcus/다운로드/api_문제해/메인퀘스트2/results/images/bench_06_pills.png"
+    }
+  ]
+}

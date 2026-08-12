@@ -1,0 +1,193 @@
+{
+  "_meta": {
+    "description": "고령 부모 돌봄 대화 어시스턴트 STT 평가용 합성 코퍼스",
+    "created": "2026-08-12",
+    "privacy_notice": "★ 전량 창작 대본이다. 실제 인물의 발화가 아니며, 등장하는 인물·지명·증상은 모두 가공이다. 실사용자 음성은 이 저장소에 존재하지 않는다.",
+    "authoring_principle": [
+      "돌봄 대화에서 어르신이 음성 메시지로 답할 법한 문장으로 구성했다.",
+      "고령 화자 발화의 전형적 특성을 의도적으로 심었다: 군말(어, 그), 반복, 말 끊김, 조사 생략, 구어체 축약.",
+      "가족이 알고 싶어 하는 신호(건강/기분/복약/식사/수면)를 signals 필드로 라벨링했다. 특이사항 추출 재현율(S5) 측정에 쓴다.",
+      "signals의 keywords는 채점용 근거 표현이며, 추출기가 이 단어를 그대로 뱉어야 한다는 뜻은 아니다."
+    ],
+    "signal_types": {
+      "health": "통증·증상·컨디션 이상",
+      "mood": "기분·정서 상태",
+      "medication": "약 복용 여부·누락",
+      "meal": "식사·입맛",
+      "sleep": "수면의 질·양"
+    },
+    "styles": {
+      "normal": "기본 속도",
+      "slow": "느린 발화 — 고령 화자의 전형적 특성",
+      "pause": "문장 중간에 긴 침묵 삽입",
+      "noisy": "생활 소음 배경 (TV·주방 등 상황 모사)"
+    }
+  },
+  "utterances": [
+    {
+      "id": "u01",
+      "text": "응 잘 잤어. 아침에 일찍 눈이 떠져서 마당에 좀 나갔다 왔지.",
+      "style": "normal",
+      "signals": [
+        { "type": "sleep", "detail": "수면 양호하나 이른 각성", "keywords": ["잘 잤", "일찍 눈이 떠져"] },
+        { "type": "health", "detail": "야외 활동 가능한 컨디션", "keywords": ["마당에", "나갔다 왔"] }
+      ]
+    },
+    {
+      "id": "u02",
+      "text": "오늘은 무릎이 좀 시큰거려서 산책은 못 나갔다.",
+      "style": "normal",
+      "signals": [
+        { "type": "health", "detail": "무릎 통증으로 산책 중단", "keywords": ["무릎", "시큰거려", "산책은 못"] }
+      ]
+    },
+    {
+      "id": "u03",
+      "text": "약은 어, 아침에 먹었나 모르겠네. 요새 자꾸 깜빡깜빡해.",
+      "style": "slow",
+      "signals": [
+        { "type": "medication", "detail": "아침 약 복용 여부 불확실", "keywords": ["약은", "먹었나 모르겠"] },
+        { "type": "health", "detail": "건망 호소", "keywords": ["깜빡깜빡"] }
+      ]
+    },
+    {
+      "id": "u04",
+      "text": "밥은 먹었어. 근데 요새 입맛이 통 없어서 반 공기밖에 못 먹었네.",
+      "style": "normal",
+      "signals": [
+        { "type": "meal", "detail": "식사량 감소, 입맛 저하", "keywords": ["입맛이 통 없", "반 공기밖에"] }
+      ]
+    },
+    {
+      "id": "u05",
+      "text": "어제 밤에 잠을 설쳤어. 새벽 세시에 깨서 그냥 뒤척였지.",
+      "style": "slow",
+      "signals": [
+        { "type": "sleep", "detail": "야간 각성, 수면 유지 곤란", "keywords": ["잠을 설쳤", "새벽 세시에 깨"] }
+      ]
+    },
+    {
+      "id": "u06",
+      "text": "그, 아들이 전화를 했더라고. 목소리 들으니까 그렇게 좋을 수가 없어.",
+      "style": "normal",
+      "signals": [
+        { "type": "mood", "detail": "가족 통화로 정서 긍정", "keywords": ["그렇게 좋을 수가 없"] }
+      ]
+    },
+    {
+      "id": "u07",
+      "text": "혈압약은 저녁에 꼬박꼬박 먹고 있어. 그건 안 빼먹어.",
+      "style": "normal",
+      "signals": [
+        { "type": "medication", "detail": "혈압약 저녁 복용 유지", "keywords": ["혈압약", "꼬박꼬박", "안 빼먹"] }
+      ]
+    },
+    {
+      "id": "u08",
+      "text": "요새는 뭐 그냥 그래. 사람이 안 오니까 좀 적적하지.",
+      "style": "slow",
+      "signals": [
+        { "type": "mood", "detail": "고립감·적적함 호소", "keywords": ["적적하", "사람이 안 오"] }
+      ]
+    },
+    {
+      "id": "u09",
+      "text": "점심에 된장찌개 끓여서 먹었어. 맛있게 잘 먹었지.",
+      "style": "normal",
+      "signals": [
+        { "type": "meal", "detail": "직접 조리 및 식사 양호", "keywords": ["된장찌개 끓여", "맛있게 잘 먹었"] }
+      ]
+    },
+    {
+      "id": "u10",
+      "text": "어, 그 저기 허리가 좀 아파. 어제 김장 좀 했다고 그런가 봐.",
+      "style": "pause",
+      "signals": [
+        { "type": "health", "detail": "허리 통증, 무리한 작업 후 발생", "keywords": ["허리가 좀 아파", "김장"] }
+      ]
+    },
+    {
+      "id": "u11",
+      "text": "병원은 다음 주 화요일에 가기로 했어. 정기 검진이야.",
+      "style": "normal",
+      "signals": [
+        { "type": "health", "detail": "정기 검진 일정 있음", "keywords": ["병원", "다음 주 화요일", "정기 검진"] }
+      ]
+    },
+    {
+      "id": "u12",
+      "text": "아니 별일 없어. 그냥 텔레비전 보다가 낮잠 좀 잤어.",
+      "style": "noisy",
+      "signals": [
+        { "type": "sleep", "detail": "낮잠", "keywords": ["낮잠"] }
+      ]
+    },
+    {
+      "id": "u13",
+      "text": "속이 좀 안 좋아서 아침을 걸렀어. 죽이라도 좀 쒀 먹을까 싶다.",
+      "style": "normal",
+      "signals": [
+        { "type": "health", "detail": "속 불편감", "keywords": ["속이 좀 안 좋"] },
+        { "type": "meal", "detail": "아침 결식", "keywords": ["아침을 걸렀"] }
+      ]
+    },
+    {
+      "id": "u14",
+      "text": "경로당에 가서 화투도 치고 놀다 왔어. 오랜만에 웃었네.",
+      "style": "normal",
+      "signals": [
+        { "type": "mood", "detail": "사회 활동 참여, 정서 긍정", "keywords": ["오랜만에 웃었"] }
+      ]
+    },
+    {
+      "id": "u15",
+      "text": "그 약을 먹으면 속이 쓰려서 어제는 그냥 안 먹었어.",
+      "style": "slow",
+      "signals": [
+        { "type": "medication", "detail": "부작용으로 임의 중단", "keywords": ["안 먹었"] },
+        { "type": "health", "detail": "위장 불편 부작용", "keywords": ["속이 쓰려"] }
+      ]
+    },
+    {
+      "id": "u16",
+      "text": "어지러워서 오늘은 그냥 누워 있었어. 일어나면 핑 돌더라고.",
+      "style": "pause",
+      "signals": [
+        { "type": "health", "detail": "어지럼증, 기립성 증상 의심", "keywords": ["어지러워", "핑 돌"] },
+        { "type": "mood", "detail": "활동 저하", "keywords": ["누워 있었"] }
+      ]
+    },
+    {
+      "id": "u17",
+      "text": "김치찌개가 좀 짜게 됐어. 그래도 밥 한 공기 다 먹었다.",
+      "style": "noisy",
+      "signals": [
+        { "type": "meal", "detail": "정상 식사량 유지", "keywords": ["밥 한 공기 다 먹었"] }
+      ]
+    },
+    {
+      "id": "u18",
+      "text": "괜찮아 괜찮아. 걱정하지 마라. 나는 아무렇지도 않으니까.",
+      "style": "normal",
+      "signals": [
+        { "type": "mood", "detail": "안심시키려는 회피성 응답 — 실제 상태와 다를 수 있음", "keywords": ["괜찮아", "걱정하지 마"] }
+      ]
+    },
+    {
+      "id": "u19",
+      "text": "손주가 그림을 그려서 보냈더라고. 냉장고에 딱 붙여놨어.",
+      "style": "normal",
+      "signals": [
+        { "type": "mood", "detail": "가족 교류로 정서 긍정", "keywords": ["붙여놨"] }
+      ]
+    },
+    {
+      "id": "u20",
+      "text": "어제부터 기침이 좀 나. 감기 기운인가 싶어서 따뜻하게 입고 있어.",
+      "style": "slow",
+      "signals": [
+        { "type": "health", "detail": "기침·감기 의심 증상", "keywords": ["기침", "감기 기운"] }
+      ]
+    }
+  ]
+}

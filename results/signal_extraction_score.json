@@ -1,0 +1,100 @@
+{
+  "criterion": "S5 특이사항 추출 재현율",
+  "target": 0.7,
+  "scoring": "신호 유형(type) 단위 재현율. 정밀도 병기.",
+  "on_reference_text": {
+    "true_positive": 25,
+    "false_negative": 0,
+    "false_positive": 1,
+    "recall": 1.0,
+    "precision": 0.9615,
+    "f1": 0.9804,
+    "per_type": {
+      "health": {
+        "tp": 9,
+        "fn": 0,
+        "fp": 1,
+        "recall": 1.0
+      },
+      "meal": {
+        "tp": 4,
+        "fn": 0,
+        "fp": 0,
+        "recall": 1.0
+      },
+      "medication": {
+        "tp": 3,
+        "fn": 0,
+        "fp": 0,
+        "recall": 1.0
+      },
+      "mood": {
+        "tp": 6,
+        "fn": 0,
+        "fp": 0,
+        "recall": 1.0
+      },
+      "sleep": {
+        "tp": 3,
+        "fn": 0,
+        "fp": 0,
+        "recall": 1.0
+      }
+    },
+    "missed": [],
+    "spurious": [
+      {
+        "id": "u14",
+        "extra_type": "health"
+      }
+    ]
+  },
+  "on_stt_output": {
+    "true_positive": 25,
+    "false_negative": 0,
+    "false_positive": 1,
+    "recall": 1.0,
+    "precision": 0.9615,
+    "f1": 0.9804,
+    "per_type": {
+      "health": {
+        "tp": 9,
+        "fn": 0,
+        "fp": 1,
+        "recall": 1.0
+      },
+      "meal": {
+        "tp": 4,
+        "fn": 0,
+        "fp": 0,
+        "recall": 1.0
+      },
+      "medication": {
+        "tp": 3,
+        "fn": 0,
+        "fp": 0,
+        "recall": 1.0
+      },
+      "mood": {
+        "tp": 6,
+        "fn": 0,
+        "fp": 0,
+        "recall": 1.0
+      },
+      "sleep": {
+        "tp": 3,
+        "fn": 0,
+        "fp": 0,
+        "recall": 1.0
+      }
+    },
+    "missed": [],
+    "spurious": [
+      {
+        "id": "u14",
+        "extra_type": "health"
+      }
+    ]
+  },
+  "stt_backend": "whisper-small"
+}

@@ -1,0 +1,34 @@
+# ── 비밀 ─────────────────────────────────────────────
+.env
+.env.local
+*.key
+*credentials*.json
+*service-account*.json
+
+# ── 파이썬 ───────────────────────────────────────────
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# ── 대용량 원본 데이터 ────────────────────────────────
+# Zeroth-Korean 원본 parquet(58MB)은 커밋하지 않는다.
+# src/prepare_zeroth.py 가 스크립트로 내려받아 재현한다.
+data/zeroth/test.parquet
+data/zeroth/audio/
+
+# 모델 가중치 — 전부 스크립트가 자동으로 내려받는다. 저장소에 넣지 않는다.
+#   yolo11n.pt / mobile_sam.pt / FastSAM-s.pt : ultralytics가 최초 실행 시 자동 다운로드
+#   models/piper/*.onnx                       : README 5.1 참조
+#   Whisper                                   : faster-whisper가 자동 캐시
+models/
+*.pt
+*.onnx
+*.bin
+*.ct2
+
+# ── 작업 부산물 ──────────────────────────────────────
+screenshots/
+*.log
+.DS_Store

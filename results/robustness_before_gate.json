@@ -1,0 +1,160 @@
+{
+  "run_at": "2026-08-12 21:09:34",
+  "backend": "whisper-small+prompt",
+  "summary": {
+    "total": 10,
+    "clean_failures": 6,
+    "hallucinations": 0,
+    "degraded": 4
+  },
+  "cases": [
+    {
+      "case": "silence",
+      "description": "완전 무음 5초",
+      "expectation": "빈 결과 또는 실패로 보고되어야 한다. 없는 말을 지어내면 안 된다.",
+      "ok": false,
+      "failure": "empty_output",
+      "error_detail": "호출은 성공했으나 전사 결과가 비어 있습니다",
+      "text": "",
+      "text_len": 0,
+      "latency_sec": 44.201,
+      "audio_duration_sec": 5.0,
+      "signals_extracted": 0,
+      "signal_labels": []
+    },
+    {
+      "case": "tiny",
+      "description": "0.1초짜리",
+      "expectation": "AUDIO_TOO_SHORT 로 걸러져야 한다.",
+      "ok": false,
+      "failure": "audio_too_short",
+      "error_detail": "음성이 너무 짧습니다 (0.10s)",
+      "text": "",
+      "text_len": 0,
+      "latency_sec": 0.0,
+      "audio_duration_sec": 0.1,
+      "signals_extracted": 0,
+      "signal_labels": []
+    },
+    {
+      "case": "noise_only",
+      "description": "소음만, 말소리 없음",
+      "expectation": "빈 결과가 이상적. 환각(없는 문장 생성)이 나오면 위험 신호.",
+      "ok": false,
+      "failure": "empty_output",
+      "error_detail": "호출은 성공했으나 전사 결과가 비어 있습니다",
+      "text": "",
+      "text_len": 0,
+      "latency_sec": 37.203,
+      "audio_duration_sec": 6.0,
+      "signals_extracted": 0,
+      "signal_labels": []
+    },
+    {
+      "case": "loud_noise",
+      "description": "말소리 + 매우 큰 소음",
+      "expectation": "정확도는 떨어지되 무언가는 알아들어야 한다.",
+      "ok": true,
+      "failure": "none",
+      "error_detail": "",
+      "text": "오늘은 무릎이 좀 시큰거려서 산책은 못 나갔다",
+      "text_len": 25,
+      "latency_sec": 2.905,
+      "audio_duration_sec": 5.12,
+      "signals_extracted": 2,
+      "signal_labels": [
+        "통증 호소",
+        "활동 제한"
+      ]
+    },
+    {
+      "case": "clipped",
+      "description": "문장 중간에서 잘림",
+      "expectation": "잘린 데까지만 전사. 뒤를 지어내면 안 된다.",
+      "ok": true,
+      "failure": "none",
+      "error_detail": "",
+      "text": "오늘은 무릎이 시큰거리다",
+      "text_len": 13,
+      "latency_sec": 2.623,
+      "audio_duration_sec": 2.0,
+      "signals_extracted": 1,
+      "signal_labels": [
+        "통증 호소"
+      ]
+    },
+    {
+      "case": "very_quiet",
+      "description": "아주 작은 목소리 (-30dB)",
+      "expectation": "알아듣거나, 못 알아들었다고 말하거나. 둘 중 하나.",
+      "ok": true,
+      "failure": "none",
+      "error_detail": "",
+      "text": "오늘은 무릎이 좀 시큰거려서 산책은 못 나갔다",
+      "text_len": 25,
+      "latency_sec": 2.844,
+      "audio_duration_sec": 5.12,
+      "signals_extracted": 2,
+      "signal_labels": [
+        "통증 호소",
+        "활동 제한"
+      ]
+    },
+    {
+      "case": "wrong_lang",
+      "description": "한국어가 아닌 발화",
+      "expectation": "language=ko 고정의 부작용 확인용.",
+      "ok": true,
+      "failure": "none",
+      "error_detail": "",
+      "text": "안녕하세요,This is a test sentence in English, not Korean",
+      "text_len": 52,
+      "latency_sec": 8.084,
+      "audio_duration_sec": 4.34,
+      "signals_extracted": 0,
+      "signal_labels": []
+    },
+    {
+      "case": "empty_file",
+      "description": "0바이트 파일",
+      "expectation": "AUDIO_UNREADABLE 로 걸러져야 한다.",
+      "ok": false,
+      "failure": "audio_unreadable",
+      "error_detail": "ffprobe로 길이를 읽지 못했습니다 (손상 또는 미지원 포맷)",
+      "text": "",
+      "text_len": 0,
+      "latency_sec": 0.0,
+      "audio_duration_sec": 0.0,
+      "signals_extracted": 0,
+      "signal_labels": []
+    },
+    {
+      "case": "corrupt",
+      "description": "헤더가 깨진 파일",
+      "expectation": "AUDIO_UNREADABLE 로 걸러져야 한다.",
+      "ok": false,
+      "failure": "audio_unreadable",
+      "error_detail": "ffprobe로 길이를 읽지 못했습니다 (손상 또는 미지원 포맷)",
+      "text": "",
+      "text_len": 0,
+      "latency_sec": 0.0,
+      "audio_duration_sec": 0.0,
+      "signals_extracted": 0,
+      "signal_labels": []
+    },
+    {
+      "case": "not_audio",
+      "description": "오디오가 아닌 파일(텍스트)",
+      "expectation": "AUDIO_UNREADABLE 로 걸러져야 한다.",
+      "ok": false,
+      "failure": "audio_unreadable",
+      "error_detail": "ffprobe로 길이를 읽지 못했습니다 (손상 또는 미지원 포맷)",
+      "text": "",
+      "text_len": 0,
+      "latency_sec": 0.0,
+      "audio_duration_sec": 0.0,
+      "signals_extracted": 0,
+      "signal_labels": []
+    }
+  ]
+}

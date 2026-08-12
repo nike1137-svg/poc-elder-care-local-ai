@@ -1,0 +1,42 @@
+# 고령 부모 돌봄 대화 어시스턴트 PoC — 의존성
+#
+# 설치:
+#   python3 -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+#
+# ★ torch는 CPU 전용 휠을 쓴다. 기본 PyPI 휠은 CUDA 패키지까지 딸려와
+#   수 GB를 낭비한다. 이 PoC는 GPU 없이 도는 것이 요점이므로 CPU 휠로 충분하다.
+#   GPU 환경(Colab 등)에서는 아래 --index-url 줄을 지우고 설치하면 된다.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# ── 음성인식 (STT) ───────────────────────────────────────────────
+faster-whisper==1.2.1
+ctranslate2==4.8.1
+
+# ── 음성 생성 (TTS) ──────────────────────────────────────────────
+piper-tts==1.6.0          # 로컬 합성 (개선안)
+edge-tts==7.2.8           # 평가용 음성 합성 + 기존 방식 대조군
+
+# ── 객체탐지 · 세그멘테이션 (YOLO / SAM) ─────────────────────────
+ultralytics==8.4.118
+torch==2.13.0
+torchvision==0.28.0
+opencv-python==5.0.0.93
+
+# ── 이미지 생성 (Diffusion) ──────────────────────────────────────
+diffusers==0.39.0
+transformers==5.15.0
+accelerate==1.14.0
+
+# ── 평가 · 데이터 ────────────────────────────────────────────────
+jiwer==4.0.0              # CER 계산
+numpy==2.5.2
+soundfile==0.14.0
+pyarrow==25.0.1           # Zeroth-Korean parquet 읽기
+
+# ── 데모 앱 ──────────────────────────────────────────────────────
+gradio==6.23.1
+
+# ── (선택) 데모 스크린샷 자동 캡처 ────────────────────────────────
+# 시스템에 설치된 Chrome을 사용한다. 없으면 `playwright install chromium`
+playwright==1.62.0

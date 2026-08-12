@@ -1,0 +1,11 @@
+{
+  "text": "예전에 마당에서 김장하던 기억이 나네",
+  "is_reminiscence": true,
+  "matched": "김장",
+  "prompt": "making kimchi together in a traditional Korean courtyard, warm nostalgic memory, soft painting style, gentle colors, no identifiable faces, illustration",
+  "output": "/home/marcus/다운로드/api_문제해/메인퀘스트2/results/reminiscence/예전에_마당에서_김장하던_기억이_나네.png",
+  "load_sec": 1.23,
+  "generate_sec": 21.88,
+  "steps": 2,
+  "external_requests": 0
+}

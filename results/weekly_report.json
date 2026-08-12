@@ -1,0 +1,555 @@
+{
+  "period": {
+    "from": "2026-08-06",
+    "to": "2026-08-12",
+    "days": 7
+  },
+  "utterances_total": 20,
+  "transcription_failures": 0,
+  "signal_type_counts": {
+    "건강": 11,
+    "기분": 6,
+    "복약": 4,
+    "식사": 4,
+    "수면": 3
+  },
+  "repeated_signals": [
+    {
+      "signal": "기분:정서 긍정",
+      "days": 2,
+      "occurrences": 3,
+      "dates": [
+        "2026-08-08",
+        "2026-08-12"
+      ]
+    },
+    {
+      "signal": "건강:활동 양호",
+      "days": 2,
+      "occurrences": 2,
+      "dates": [
+        "2026-08-06",
+        "2026-08-12"
+      ]
+    },
+    {
+      "signal": "건강:통증 호소",
+      "days": 2,
+      "occurrences": 2,
+      "dates": [
+        "2026-08-06",
+        "2026-08-09"
+      ]
+    },
+    {
+      "signal": "복약:복약 누락 의심",
+      "days": 2,
+      "occurrences": 2,
+      "dates": [
+        "2026-08-08",
+        "2026-08-11"
+      ]
+    },
+    {
+      "signal": "식사:식사 양호",
+      "days": 2,
+      "occurrences": 2,
+      "dates": [
+        "2026-08-10",
+        "2026-08-12"
+      ]
+    }
+  ],
+  "concern_by_day": {
+    "2026-08-06": 4,
+    "2026-08-07": 2,
+    "2026-08-08": 1,
+    "2026-08-09": 2,
+    "2026-08-10": 0,
+    "2026-08-11": 6,
+    "2026-08-12": 2
+  },
+  "top_signals": [
+    {
+      "signal": "기분:정서 긍정",
+      "count": 3
+    },
+    {
+      "signal": "건강:활동 양호",
+      "count": 2
+    },
+    {
+      "signal": "건강:통증 호소",
+      "count": 2
+    },
+    {
+      "signal": "복약:복약 누락 의심",
+      "count": 2
+    },
+    {
+      "signal": "식사:식사 양호",
+      "count": 2
+    },
+    {
+      "signal": "건강:소화기 이상",
+      "count": 2
+    },
+    {
+      "signal": "수면:수면 양호",
+      "count": 1
+    },
+    {
+      "signal": "건강:활동 제한",
+      "count": 1
+    }
+  ],
+  "days_detail": [
+    {
+      "date": "2026-08-06",
+      "utterances": [
+        {
+          "id": "u01",
+          "ok": true,
+          "failure": "none",
+          "text": "능 잘 잤어. 아침에 일찍 눈이 떠져서 마당에 좀 나갔다 왔지?",
+          "signals": [
+            {
+              "signal_type": "health",
+              "signal_type_ko": "건강",
+              "label": "활동 양호",
+              "concern": false,
+              "priority": 3,
+              "evidence": "마당",
+              "context": "아침에 일찍 눈이 떠져서 마당에 좀 나갔다 왔지?"
+            },
+            {
+              "signal_type": "sleep",
+              "signal_type_ko": "수면",
+              "label": "수면 양호",
+              "concern": false,
+              "priority": 3,
+              "evidence": "잘 잤",
+              "context": "능 잘 잤어."
+            }
+          ]
+        },
+        {
+          "id": "u02",
+          "ok": true,
+          "failure": "none",
+          "text": "오늘은 무릎이 좀 시큰거려서 산책은 못 나갔다.",
+          "signals": [
+            {
+              "signal_type": "health",
+              "signal_type_ko": "건강",
+              "label": "통증 호소",
+              "concern": true,
+              "priority": 1,
+              "evidence": "무릎이 좀 시큰",
+              "context": "오늘은 무릎이 좀 시큰거려서 산책은 못 나갔다."
+            },
+            {
+              "signal_type": "health",
+              "signal_type_ko": "건강",
+              "label": "활동 제한",
+              "concern": true,
+              "priority": 3,
+              "evidence": "산책",
+              "context": "오늘은 무릎이 좀 시큰거려서 산책은 못 나갔다."
+            }
+          ]
+        },
+        {
+          "id": "u03",
+          "ok": true,
+          "failure": "none",
+          "text": "약은 어, 아침에 먹었나 모르겠네. 요새 자꾸 깜빡깜빡해.",
+          "signals": [
+            {
+              "signal_type": "health",
+              "signal_type_ko": "건강",
+              "label": "건망 호소",
+              "concern": true,
+              "priority": 1,
+              "evidence": "깜빡깜빡",
+              "context": "요새 자꾸 깜빡깜빡해."
+            },
+            {
+              "signal_type": "medication",
+              "signal_type_ko": "복약",
+              "label": "복약 여부 불확실",
+              "concern": true,
+              "priority": 1,
+              "evidence": "먹었나 모르",
+              "context": "약은 어, 아침에 먹었나 모르겠네."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-07",
+      "utterances": [
+        {
+          "id": "u04",
+          "ok": true,
+          "failure": "none",
+          "text": "밥은 먹었어. 근데 요새 입맛이 통 없어서 반 공기밖에 못 먹었네?",
+          "signals": [
+            {
+              "signal_type": "meal",
+              "signal_type_ko": "식사",
+              "label": "식욕 저하",
+              "concern": true,
+              "priority": 1,
+              "evidence": "입맛이 통 없",
+              "context": "근데 요새 입맛이 통 없어서 반 공기밖에 못 먹었네?"
+            }
+          ]
+        },
+        {
+          "id": "u05",
+          "ok": true,
+          "failure": "none",
+          "text": "어젯밤에 잠을 설쳤어, 새벽 3시에 깨서 그냥 뒤척였지?",
+          "signals": [
+            {
+              "signal_type": "sleep",
+              "signal_type_ko": "수면",
+              "label": "수면 곤란",
+              "concern": true,
+              "priority": 2,
+              "evidence": "잠을 설쳤",
+              "context": "어젯밤에 잠을 설쳤어, 새벽 3시에 깨서 그냥 뒤척였지?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-08",
+      "utterances": [
+        {
+          "id": "u06",
+          "ok": true,
+          "failure": "none",
+          "text": "그 아들이 전화를 했더라고. 목소리 들으니까 그렇게 좋을 수가 없어.",
+          "signals": [
+            {
+              "signal_type": "mood",
+              "signal_type_ko": "기분",
+              "label": "정서 긍정",
+              "concern": false,
+              "priority": 3,
+              "evidence": "아들이 전화를 했더라",
+              "context": "그 아들이 전화를 했더라고."
+            }
+          ]
+        },
+        {
+          "id": "u07",
+          "ok": true,
+          "failure": "none",
+          "text": "혈압약은 저녁에 꼬박꼬박 먹고 있어? 그건 안 떼 먹어.",
+          "signals": [
+            {
+              "signal_type": "medication",
+              "signal_type_ko": "복약",
+              "label": "복약 누락 의심",
+              "concern": true,
+              "priority": 3,
+              "evidence": "혈압약은 저녁에 꼬박꼬박 먹고 있",
+              "context": "혈압약은 저녁에 꼬박꼬박 먹고 있어 그건 안 떼 먹어"
+            },
+            {
+              "signal_type": "medication",
+              "signal_type_ko": "복약",
+              "label": "복약 유지",
+              "concern": false,
+              "priority": 3,
+              "evidence": "약은 저녁에 꼬박꼬박",
+              "context": "혈압약은 저녁에 꼬박꼬박 먹고 있어?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-09",
+      "utterances": [
+        {
+          "id": "u08",
+          "ok": true,
+          "failure": "none",
+          "text": "요새는 뭐 그냥 그래? 사람이 안 오니까 좀 적적하지?",
+          "signals": [
+            {
+              "signal_type": "mood",
+              "signal_type_ko": "기분",
+              "label": "고립감·우울",
+              "concern": true,
+              "priority": 1,
+              "evidence": "그냥 그래",
+              "context": "요새는 뭐 그냥 그래?"
+            }
+          ]
+        },
+        {
+          "id": "u10",
+          "ok": true,
+          "failure": "none",
+          "text": "어 그저기 허리가 좀 아파. 어제 김장 좀 했다고 그런가 봐.",
+          "signals": [
+            {
+              "signal_type": "health",
+              "signal_type_ko": "건강",
+              "label": "통증 호소",
+              "concern": true,
+              "priority": 1,
+              "evidence": "허리가 좀 아파",
+              "context": "어 그저기 허리가 좀 아파."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "utterances": [
+        {
+          "id": "u09",
+          "ok": true,
+          "failure": "none",
+          "text": "점심에 된장찌개 끓여서 먹었어. 맛있게 잘 먹었지?",
+          "signals": [
+            {
+              "signal_type": "meal",
+              "signal_type_ko": "식사",
+              "label": "식사 양호",
+              "concern": false,
+              "priority": 3,
+              "evidence": "끓여서 먹",
+              "context": "점심에 된장찌개 끓여서 먹었어."
+            }
+          ]
+        },
+        {
+          "id": "u11",
+          "ok": true,
+          "failure": "none",
+          "text": "병원은 다음 주 화요일에 가기로 했어. 정기검진이야.",
+          "signals": [
+            {
+              "signal_type": "health",
+              "signal_type_ko": "건강",
+              "label": "병원 일정",
+              "concern": false,
+              "priority": 2,
+              "evidence": "정기검진",
+              "context": "정기검진이야."
+            }
+          ]
+        },
+        {
+          "id": "u12",
+          "ok": true,
+          "failure": "none",
+          "text": "아니 별일 없어. 그냥 텔레비전 보다가 낮잠 좀 잤어.",
+          "signals": [
+            {
+              "signal_type": "sleep",
+              "signal_type_ko": "수면",
+              "label": "낮잠",
+              "concern": false,
+              "priority": 3,
+              "evidence": "낮잠",
+              "context": "그냥 텔레비전 보다가 낮잠 좀 잤어."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "utterances": [
+        {
+          "id": "u13",
+          "ok": true,
+          "failure": "none",
+          "text": "속이 좀 안 좋아서 아침을 걸렀어. 죽이라도 좀 써 먹을까 싶다.",
+          "signals": [
+            {
+              "signal_type": "health",
+              "signal_type_ko": "건강",
+              "label": "소화기 이상",
+              "concern": true,
+              "priority": 1,
+              "evidence": "속이 좀 안 좋",
+              "context": "속이 좀 안 좋아서 아침을 걸렀어."
+            },
+            {
+              "signal_type": "meal",
+              "signal_type_ko": "식사",
+              "label": "결식",
+              "concern": true,
+              "priority": 1,
+              "evidence": "아침을 걸렀",
+              "context": "속이 좀 안 좋아서 아침을 걸렀어."
+            }
+          ]
+        },
+        {
+          "id": "u15",
+          "ok": true,
+          "failure": "none",
+          "text": "그 약을 먹으면 속이 쓰려서 어제는 그냥 안 먹었어.",
+          "signals": [
+            {
+              "signal_type": "health",
+              "signal_type_ko": "건강",
+              "label": "소화기 이상",
+              "concern": true,
+              "priority": 1,
+              "evidence": "속이 쓰려",
+              "context": "그 약을 먹으면 속이 쓰려서 어제는 그냥 안 먹었어."
+            },
+            {
+              "signal_type": "medication",
+              "signal_type_ko": "복약",
+              "label": "복약 누락 의심",
+              "concern": true,
+              "priority": 1,
+              "evidence": "약을 먹으면 속이 쓰려서 어제는 그냥 안 먹",
+              "context": "그 약을 먹으면 속이 쓰려서 어제는 그냥 안 먹었어."
+            }
+          ]
+        },
+        {
+          "id": "u16",
+          "ok": true,
+          "failure": "none",
+          "text": "어지러워서 오늘은 그냥 누워 있었어, 일어나면 핑돌더라고",
+          "signals": [
+            {
+              "signal_type": "health",
+              "signal_type_ko": "건강",
+              "label": "어지럼증",
+              "concern": true,
+              "priority": 1,
+              "evidence": "어지러",
+              "context": "어지러워서 오늘은 그냥 누워 있었어, 일어나면 핑돌더라고"
+            },
+            {
+              "signal_type": "mood",
+              "signal_type_ko": "기분",
+              "label": "활동 저하",
+              "concern": true,
+              "priority": 2,
+              "evidence": "누워 있었",
+              "context": "어지러워서 오늘은 그냥 누워 있었어, 일어나면 핑돌더라고"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "utterances": [
+        {
+          "id": "u14",
+          "ok": true,
+          "failure": "none",
+          "text": "경로당에 가서 화투도 치고 놀다 왔어. 오랜만에 웃었네.",
+          "signals": [
+            {
+              "signal_type": "health",
+              "signal_type_ko": "건강",
+              "label": "활동 양호",
+              "concern": false,
+              "priority": 3,
+              "evidence": "경로당",
+              "context": "경로당에 가서 화투도 치고 놀다 왔어."
+            },
+            {
+              "signal_type": "mood",
+              "signal_type_ko": "기분",
+              "label": "정서 긍정",
+              "concern": false,
+              "priority": 3,
+              "evidence": "웃었",
+              "context": "오랜만에 웃었네."
+            }
+          ]
+        },
+        {
+          "id": "u17",
+          "ok": true,
+          "failure": "none",
+          "text": "김치찌개가 좀 짜게 됐어. 그래도 밥 한 공기 다 먹었다.",
+          "signals": [
+            {
+              "signal_type": "meal",
+              "signal_type_ko": "식사",
+              "label": "식사 양호",
+              "concern": false,
+              "priority": 3,
+              "evidence": "한 공기 다",
+              "context": "그래도 밥 한 공기 다 먹었다."
+            }
+          ]
+        },
+        {
+          "id": "u18",
+          "ok": true,
+          "failure": "none",
+          "text": "괜찮아, 괜찮아, 걱정하지 마라, 나는 아무렇지도 않으니까",
+          "signals": [
+            {
+              "signal_type": "mood",
+              "signal_type_ko": "기분",
+              "label": "회피성 응답",
+              "concern": true,
+              "priority": 2,
+              "evidence": "괜찮아",
+              "context": "괜찮아, 괜찮아, 걱정하지 마라, 나는 아무렇지도 않으니까"
+            }
+          ]
+        },
+        {
+          "id": "u19",
+          "ok": true,
+          "failure": "none",
+          "text": "손주가 그림을 그려서 보냈더라고. 냉장고에 딱 붙여놨어.",
+          "signals": [
+            {
+              "signal_type": "mood",
+              "signal_type_ko": "기분",
+              "label": "정서 긍정",
+              "concern": false,
+              "priority": 3,
+              "evidence": "손주가 그림을 그려서 보냈",
+              "context": "손주가 그림을 그려서 보냈더라고."
+            }
+          ]
+        },
+        {
+          "id": "u20",
+          "ok": true,
+          "failure": "none",
+          "text": "어제부터 기침이 좀 나어 감기 기운인가 싶어서 따뜻하게 입고 있어.",
+          "signals": [
+            {
+              "signal_type": "health",
+              "signal_type_ko": "건강",
+              "label": "감기·호흡기 증상",
+              "concern": true,
+              "priority": 2,
+              "evidence": "기침",
+              "context": "어제부터 기침이 좀 나어 감기 기운인가 싶어서 따뜻하게 입고 있어."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

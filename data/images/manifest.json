@@ -1,0 +1,83 @@
+{
+  "_meta": {
+    "model": "stabilityai/sd-turbo",
+    "seed_base": 20260812,
+    "steps": 2,
+    "size": 512,
+    "privacy_notice": "전량 생성 이미지다. 실제 인물·실제 약·실제 가정의 사진이 아니다. 이 저장소에 실사진은 존재하지 않는다.",
+    "generated_locally": true,
+    "external_requests_at_inference": 0
+  },
+  "images": [
+    {
+      "id": "pill_01",
+      "group": "pill",
+      "prompt": "top down photo of several round white pills scattered on a wooden table, clear daylight, sharp focus, realistic photo",
+      "file": "pill_01.png",
+      "bytes": 481409
+    },
+    {
+      "id": "pill_02",
+      "group": "pill",
+      "prompt": "photo of a weekly pill organizer box with colorful pills, on a kitchen table, realistic photo, natural light",
+      "file": "pill_02.png",
+      "bytes": 497840
+    },
+    {
+      "id": "pill_03",
+      "group": "pill",
+      "prompt": "close up photo of a hand holding two white pills and a glass of water, realistic photo, indoor",
+      "file": "pill_03.png",
+      "bytes": 493066
+    },
+    {
+      "id": "person_01",
+      "group": "person",
+      "prompt": "photo of an elderly Korean woman sitting on a sofa in a living room, smiling at the camera, realistic photo",
+      "file": "person_01.png",
+      "bytes": 446236
+    },
+    {
+      "id": "person_02",
+      "group": "person",
+      "prompt": "photo of two elderly people talking at a community center table, realistic photo, indoor daylight",
+      "file": "person_02.png",
+      "bytes": 432676
+    },
+    {
+      "id": "person_03",
+      "group": "person",
+      "prompt": "photo of an elderly man standing in a home kitchen holding a bowl, realistic photo",
+      "file": "person_03.png",
+      "bytes": 444583
+    },
+    {
+      "id": "bg_wood",
+      "group": "background",
+      "prompt": "empty wooden table surface, top down view, plain, nothing on it, no objects, clean wood grain texture, even daylight, realistic photo",
+      "file": "bg_wood.png",
+      "bytes": 513854
+    },
+    {
+      "id": "memory_kimchi",
+      "group": "memory",
+      "prompt": "an old Korean woman making kimchi in a traditional courtyard, warm nostalgic memory, soft painting style",
+      "file": "memory_kimchi.png",
+      "bytes": 488493
+    },
+    {
+      "id": "memory_market",
+      "group": "memory",
+      "prompt": "a busy old Korean traditional market street in the 1970s, warm nostalgic memory, soft painting style",
+      "file": "memory_market.png",
+      "bytes": 556635
+    },
+    {
+      "id": "memory_school",
+      "group": "memory",
+      "prompt": "children walking home from a rural Korean school in the 1960s, warm nostalgic memory, soft painting style",
+      "file": "memory_school.png",
+      "bytes": 512155
+    }
+  ]
+}
