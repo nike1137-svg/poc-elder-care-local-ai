@@ -1,0 +1,65 @@
+MIT License
+
+Copyright (c) 2026 nike1137-svg
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+서드파티 구성요소 안내 (Third-party components)
+================================================================================
+
+위 MIT 라이선스는 **이 저장소에 포함된 코드·문서·생성 데이터**에만 적용된다.
+이 프로젝트가 의존하는 모델과 라이브러리는 각자의 라이선스를 따르며,
+그중 일부는 MIT보다 강한 조건을 갖는다.
+
+⚠️ 특히 주의할 것 — Ultralytics (YOLO11 / MobileSAM / FastSAM)
+    라이선스: AGPL-3.0
+    이 저장소는 Ultralytics 코드를 포함하지 않고 의존성으로만 사용한다.
+    다만 AGPL-3.0은 **네트워크로 서비스할 경우** 소스 공개 의무를 발생시킬 수 있다.
+    이 PoC를 **공개 서버에 배포하려는 경우** 반드시 조건을 먼저 확인할 것.
+    (이 저장소가 웹 데모를 배포하지 않는 이유 중 하나이기도 하다 — README 참조)
+    상업적 사용에는 별도 라이선스가 필요할 수 있다.
+
+그 밖의 구성요소:
+
+  Whisper (모델 가중치)           MIT — OpenAI
+  faster-whisper (구현)            MIT
+  CTranslate2                      MIT
+  piper-tts                        MIT
+  piper 한국어 음성 (ko_KR-kss)    rhasspy/piper-voices 저장소의 조건을 따름
+  Stable Diffusion Turbo           Stability AI Community License
+                                   (비상업 사용 및 조건부 상업 사용 — 원문 확인 필요)
+  diffusers / transformers         Apache-2.0
+  PyTorch                          BSD-3-Clause
+  Gradio                           Apache-2.0
+  OpenCV                           Apache-2.0
+
+평가용 데이터:
+
+  Zeroth-Korean                    CC-BY-4.0
+                                   출처: https://huggingface.co/datasets/Bingsu/zeroth-korean
+                                   원본: OpenSLR-40
+                                   ※ 원본 오디오는 저장소에 포함하지 않으며,
+                                     스크립트가 내려받아 재현한다.
+
+  합성 음성 20건 / 생성 이미지 10건 / 대본 / 측정 결과
+                                   이 저장소에서 새로 만든 것. MIT 적용.
+                                   실제 인물의 음성·사진은 포함되어 있지 않다.
+
+================================================================================
