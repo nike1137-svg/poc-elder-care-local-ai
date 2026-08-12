@@ -30,12 +30,18 @@
 > "검토할 값이 있다"는 근거다.** 실제 어르신 대상 검증이 남아 있다.
 > → [9. 결론](#9-결론)
 
-**30초 만에 확인하기**
+**바로 돌려보기** (Python 3.12 · ffmpeg 필요 → [상세](#50-실행-환경-요구사항))
 
 ```bash
+git clone https://github.com/nike1137-svg/poc-elder-care-local-ai.git
+cd poc-elder-care-local-ai
+python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 python src/pipeline.py data/audio/u13.m4a
 ```
+
+평가용 음성은 저장소에 들어 있어 따로 만들 필요가 없습니다.
+설치에 10~20분, 첫 실행에 모델 내려받는 시간이 더 걸립니다.
 
 **바로 가기** ·
 [문제](#1-문제--무엇이-잘못되어-있었나) ·
@@ -254,15 +260,47 @@ RAM과 디스크는 **어디까지 쓰느냐**에 따라 크게 다릅니다.
 > 3.11 이하나 3.13 이상을 쓰신다면 `requirements.txt`의 `==` 를 `>=` 로 바꾸거나,
 > `pyenv` 등으로 3.12를 쓰세요.
 
-파이썬 버전 확인:
+**시작 전에 한 번에 확인:**
 
 ```bash
-python3 --version
+python3 --version; free -h | sed -n '2p'; df -h ~ | tail -1; which git ffmpeg
 ```
+
+#### 윈도우(WSL2)에서 쓸 때
+
+동작합니다. 다만 세 가지를 먼저 확인하세요.
+
+| 항목 | 확인 | 안 맞으면 |
+|---|---|---|
+| **파이썬** | Ubuntu **24.04**는 3.12 기본 탑재 | 22.04는 3.10이라 3.12를 따로 설치해야 함 |
+| **메모리** | WSL2는 기본적으로 윈도우 RAM의 **절반**만 씁니다 | 가용 6GB 미만이면 **회상 이미지 생성이 `Killed`로 죽습니다.** 그 기능만 건너뛰면 나머지는 정상 |
+| **위치** | `~`(WSL 내부)에 클론 | `/mnt/c/...`에 두면 파일 접근이 몇 배 느립니다 |
+
+WSL 메모리를 늘리려면 윈도우에서 `%USERPROFILE%\.wslconfig` 를 만들고 아래를 넣은 뒤 `wsl --shutdown` 합니다.
+
+```ini
+[wsl2]
+memory=8GB
+```
+
+**잘 되는 것들**: 웹 데모(`python app.py`)는 윈도우 브라우저에서 `localhost:7860` 으로 바로 열립니다.
+WSL에 사운드 장치가 없어도 음성 재생은 브라우저에서 되므로 문제없습니다.
 
 ### 5.1 준비
 
-`ffmpeg`부터 설치합니다. 오디오 형식 변환에 반드시 필요합니다.
+**① 저장소를 받습니다.**
+
+```bash
+git clone https://github.com/nike1137-svg/poc-elder-care-local-ai.git
+cd poc-elder-care-local-ai
+```
+
+공개 저장소라 로그인 없이 받아집니다.
+
+> **WSL2를 쓰신다면 `/mnt/c/...`(윈도우 드라이브)에 두지 마세요.**
+> 파일 접근이 몇 배 느려 모델 로딩이 답답해집니다. `cd ~` 로 이동한 뒤 받으세요.
+
+**② `ffmpeg`을 설치합니다.** 오디오 형식 변환에 반드시 필요합니다.
 
 ```bash
 sudo apt install -y ffmpeg     # Ubuntu / Debian / WSL2
@@ -270,11 +308,14 @@ sudo apt install -y ffmpeg     # Ubuntu / Debian / WSL2
 
 macOS는 `brew install ffmpeg` 입니다.
 
-그다음 가상환경을 만들고 의존성을 설치합니다. **2GB 넘게 내려받으므로 네트워크에 따라 10~20분** 걸립니다.
+**③ 가상환경을 만들고 의존성을 설치합니다.** **2GB 넘게 내려받으므로 네트워크에 따라 10~20분** 걸립니다.
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
 ```
+
+> ⚠️ 이 명령은 **저장소 폴더 안에서** 실행해야 합니다. `requirements.txt` 가 그 안에 있습니다.
+> `Could not open requirements file` 오류가 나면 ① 단계를 건너뛰신 겁니다.
 
 > 설치되는 PyTorch는 **CPU 전용 휠**입니다(`torch-2.13.0+cpu`). `requirements.txt` 상단의
 > `--extra-index-url` 이 그 역할을 합니다. GPU를 쓰실 거라면 그 줄을 지우고 설치하세요.
