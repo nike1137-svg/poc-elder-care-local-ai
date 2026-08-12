@@ -32,3 +32,10 @@ models/
 screenshots/
 *.log
 .DS_Store
+
+# ── 데모 실행 부산물 ─────────────────────────────────
+# results/ 는 '측정 결과'만 담는다. 아래는 데모를 돌릴 때마다
+# 새로 만들어지는 바이너리라 추적하면 저장소만 부푼다.
+# (측정 결과 JSON은 그대로 추적한다 — 문서가 인용하는 근거이므로)
+results/voice/demo_report.wav
+results/reminiscence/demo.png
