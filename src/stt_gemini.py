@@ -128,7 +128,7 @@ class GeminiBackend(STTBackend):
                 data = self._post(payload)
                 break
             except urllib.error.HTTPError as exc:
-                body = exc.read().decode("utf-8", "replace")[:300]
+                body = exc.read().decode("utf-8", "replace")[:1200]  # 진단 정보(quotaId·retryDelay)가 잘리지 않게
                 if exc.code == 429 and attempt < self.max_retries:
                     time.sleep(min(30, 6 * attempt))   # 지수적 후퇴
                     last_exc = exc
