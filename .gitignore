@@ -38,4 +38,5 @@ screenshots/
 # 새로 만들어지는 바이너리라 추적하면 저장소만 부푼다.
 # (측정 결과 JSON은 그대로 추적한다 — 문서가 인용하는 근거이므로)
 results/voice/demo_report.wav
+results/voice/nb_report.wav
 results/reminiscence/demo.png
