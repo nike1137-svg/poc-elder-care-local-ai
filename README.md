@@ -45,6 +45,10 @@ python src/pipeline.py data/audio/u13.m4a
 평가용 음성은 저장소에 들어 있어 따로 만들 필요가 없습니다.
 설치에 10-20분, 첫 실행에 모델 내려받는 시간이 더 걸립니다.
 
+**설치 없이 바로 보고 싶으시면** — 브라우저에서 전부 돌아갑니다.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nike1137-svg/poc-elder-care-local-ai/blob/main/notebooks/poc_demo.ipynb)
+
 **바로 가기** ·
 [문제](#1-문제--무엇이-잘못되어-있었나) ·
 [개선](#2-개선--무엇을-했나) ·
@@ -497,11 +501,20 @@ python src/evaluate.py --backend gemini --dataset synthetic
 > 평가 데이터가 합성 대본이라 무료 티어를 써도 프라이버시 문제가 없습니다.
 > 실서비스가 무료 티어를 못 쓰는 이유("실제 가족 대화라서")가 이 PoC의 출발점입니다.
 
-### 5.6 Colab
+### 5.6 Colab — 설치 없이 브라우저에서
 
-GPU 환경에서 더 큰 모델까지 돌려볼 수 있습니다.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nike1137-svg/poc-elder-care-local-ai/blob/main/notebooks/poc_demo.ipynb)
 
-[`notebooks/poc_demo.ipynb`](notebooks/poc_demo.ipynb)
+**위 배지를 누르면 설치 없이 바로 실행됩니다.** 구글 계정만 있으면 됩니다.
+
+노트북 하나에 음성 전사 · 특이사항 추출 · 하이퍼파라미터 튜닝 · 교차 검증 ·
+강건성 테스트 · 사진 마스킹 · 로컬 음성 합성이 순서대로 들어 있습니다.
+
+- **GPU를 켜지 않아도 전부 동작합니다.** 이 프로젝트의 요점이 "GPU 없이 돌아간다"입니다
+- GPU(T4)를 켜면 더 큰 모델(`large-v3`)로 자동 전환됩니다
+- 설치 3-5분 + 실행 5분 내외
+
+파일로 직접 보시려면 → [`notebooks/poc_demo.ipynb`](notebooks/poc_demo.ipynb)
 
 ### 5.7 막혔을 때
 
