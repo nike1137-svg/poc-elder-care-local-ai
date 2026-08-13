@@ -150,6 +150,13 @@ class GeminiBackend(STTBackend):
         usage = data.get("usageMetadata") or {}
         meta = {
             "model": self.model,
+            # ★ 실제로 응답한 모델 버전을 반드시 남긴다.
+            #   `gemini-flash-latest` 는 **별칭**이라 구글이 가리키는 실제 모델을
+            #   조용히 바꿀 수 있다. 처음엔 이 필드를 안 남겼는데, 하루 뒤 다시 재보니
+            #   CER이 0.0075 → 0.0185 로 달라졌고 **모델이 바뀐 건지 같은 모델이
+            #   다르게 답한 건지 구분할 방법이 없었다.** 기록이 없으면 원인을 못 짚는다.
+            "model_version": data.get("modelVersion"),
+            "response_id": data.get("responseId"),
             "finish_reason": cand.get("finishReason"),
             "prompt_tokens": usage.get("promptTokenCount"),
             "output_tokens": usage.get("candidatesTokenCount"),
