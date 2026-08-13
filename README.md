@@ -43,7 +43,7 @@ python src/pipeline.py data/audio/u13.m4a
 ```
 
 평가용 음성은 저장소에 들어 있어 따로 만들 필요가 없습니다.
-설치에 10~20분, 첫 실행에 모델 내려받는 시간이 더 걸립니다.
+설치에 10-20분, 첫 실행에 모델 내려받는 시간이 더 걸립니다.
 
 **바로 가기** ·
 [문제](#1-문제--무엇이-잘못되어-있었나) ·
@@ -95,7 +95,9 @@ python src/pipeline.py data/audio/u13.m4a
 자세한 논의: [docs/problem-statement.md](docs/problem-statement.md) §0
 
 </details>
+
 ---
+
 ## 1. 문제 — 무엇이 잘못되어 있었나
 
 현재 음성 루프는 **양쪽 모두 외부로 나간다.**
@@ -249,7 +251,7 @@ YOLO가 인물을 찾고 SAM이 윤곽을 따내 모자이크. **얼굴은 알�
 ## 5. 실행 방법
 
 > **일단 돌려보고 싶으시면 → [§5.2 가장 빠르게 확인하기](#52-가장-빠르게-확인하기--30초)** (30초)
-> 아래 §5.0~5.1은 처음 설치할 때 한 번 보시면 되는 내용입니다.
+> 아래 §5.0-5.1은 처음 설치할 때 한 번 보시면 되는 내용입니다.
 
 ### 5.0 실행 환경 요구사항
 
@@ -325,7 +327,7 @@ cd poc-elder-care-local-ai
 > ```
 >
 > `/mnt/c/...`(윈도우 드라이브)에 두면 WSL에서 파일 접근이 몇 배 느립니다.
-> 설치가 3~5분이 아니라 **10~20분**이 되고, 모델 로딩도 계속 답답합니다.
+> 설치가 3-5분이 아니라 **10-20분**이 되고, 모델 로딩도 계속 답답합니다.
 >
 > 이미 `/mnt/c` 에 받으셨다면 옮기면 됩니다.
 >
@@ -344,7 +346,7 @@ sudo apt install -y ffmpeg     # Ubuntu / Debian / WSL2
 
 macOS는 `brew install ffmpeg` 입니다.
 
-**③ 가상환경을 만들고 의존성을 설치합니다.** **2GB 넘게 내려받으므로 네트워크에 따라 10~20분** 걸립니다.
+**③ 가상환경을 만들고 의존성을 설치합니다.** **2GB 넘게 내려받으므로 네트워크에 따라 10-20분** 걸립니다.
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
@@ -361,8 +363,8 @@ python3 -m venv .venv && source .venv/bin/activate && pip install -r requirement
 > Installing collected packages: pytz, pydub, ... gradio
 > ```
 >
-> 패키지 105개를 실제로 푸는 단계인데 진행 표시가 없습니다.
-> PyTorch 하나가 압축 191MB라 여기서만 **3~5분**(WSL의 `/mnt/c` 에서는 **10~20분**) 걸립니다.
+> 패키지 108개를 실제로 푸는 단계인데 진행 표시가 없습니다.
+> PyTorch 하나가 압축 191MB라 여기서만 **3-5분**(WSL의 `/mnt/c` 에서는 **10-20분**) 걸립니다.
 >
 > 확인하고 싶으면 **다른 터미널**에서 크기가 늘고 있는지 보세요. 2.5GB 근처에서 끝납니다.
 >
@@ -377,7 +379,7 @@ python3 -m venv .venv && source .venv/bin/activate && pip install -r requirement
 > 그대로 실행한 결과, 패키지 108개가 오류 없이 설치되고 §5.2의 출력이 **글자까지 동일하게**
 > 재현되었습니다.
 
-한국어 TTS 음성 모델(61MB)을 내려받는다. (음성 리포트를 쓸 때만 필요)
+**④ (선택) 한국어 TTS 음성 모델**(61MB)을 내려받습니다. 음성 리포트를 쓸 때만 필요합니다.
 
 ```bash
 mkdir -p models/piper
@@ -395,7 +397,7 @@ python src/pipeline.py data/audio/u13.m4a
 
 평가용 음성은 **저장소에 이미 들어 있어서** 따로 만들 필요가 없습니다.
 
-> **최초 1회는 Whisper 모델(약 500MB)을 자동으로 내려받습니다.** 네트워크에 따라 1~5분.
+> **최초 1회는 Whisper 모델(약 500MB)을 자동으로 내려받습니다.** 네트워크에 따라 1-5분.
 > `Downloading...` 이 뜨면 정상이니 기다리세요.
 > 모델이 받아진 뒤에는 **전체 15초, 전사 자체는 3초**입니다(실측).
 
@@ -454,20 +456,20 @@ python app.py
 
 ### 5.4 평가 재현
 
-```bash
-# 평가용 음성 생성 (저장소에 이미 들어 있음)
-python src/build_dataset.py
+합성 음성 20건은 **저장소에 이미 들어 있어** 아래 명령은 바로 실행됩니다.
+(대본에서 다시 만들고 싶다면 `python src/build_dataset.py`)
 
-# 공개 데이터셋 준비 (약 58MB 내려받기)
+```bash
+# 공개 데이터셋 준비 (약 58MB 내려받기) — 합성 코퍼스만 볼 거면 건너뛰어도 됩니다
 curl -L -o data/zeroth/test.parquet \
   "https://huggingface.co/datasets/Bingsu/zeroth-korean/resolve/main/data/test-00000-of-00001-a41b955a631e582e.parquet"
 python src/prepare_zeroth.py
 
-# 개선안 측정
+# 개선안 측정 (위 단계를 건너뛰었다면 --dataset synthetic)
 python src/evaluate.py --backend whisper --dataset both
 
-# 특이사항 추출 채점
-python src/eval_signals.py --stt-result results/whisper_whisper-small_synthetic.json
+# 특이사항 추출 채점 — 바로 위에서 만들어진 결과 파일을 넣습니다
+python src/eval_signals.py --stt-result results/whisper_whisper-small+prompt_synthetic.json
 
 # 하이퍼파라미터 스윕
 python src/tune_whisper.py --dataset synthetic
@@ -492,12 +494,12 @@ cp .env.example .env
 python src/evaluate.py --backend gemini --dataset synthetic
 ```
 
-> 평가 데이터가 합성 대본이라 무료 티어를 써도 프라이버시 문제가 없다.
-> 실서비스가 무료 티어를 못 쓰는 이유("실제 가족 대화라서")가 이 PoC의 출발점이다.
+> 평가 데이터가 합성 대본이라 무료 티어를 써도 프라이버시 문제가 없습니다.
+> 실서비스가 무료 티어를 못 쓰는 이유("실제 가족 대화라서")가 이 PoC의 출발점입니다.
 
 ### 5.6 Colab
 
-GPU 환경에서 더 큰 모델까지 돌려볼 수 있다.
+GPU 환경에서 더 큰 모델까지 돌려볼 수 있습니다.
 
 [`notebooks/poc_demo.ipynb`](notebooks/poc_demo.ipynb)
 
@@ -509,11 +511,11 @@ GPU 환경에서 더 큰 모델까지 돌려볼 수 있다.
 | `ffmpeg not found` / `ffprobe not found` | `sudo apt install -y ffmpeg` |
 | 첫 실행이 몇 분째 멈춘 듯함 | **모델 내려받는 중입니다.** Whisper 500MB, SD-Turbo 2.5GB. 정상입니다 |
 | `Killed` 로 죽음 | **메모리 부족.** 회상 이미지(SD-Turbo)는 RAM 6GB가 필요합니다. 음성 기능만 쓰세요 |
-| 회상 이미지가 너무 느림 | CPU에서 40초는 정상입니다. Colab GPU를 쓰면 1~2초입니다 |
+| 회상 이미지가 너무 느림 | CPU에서 40초는 정상입니다. Colab GPU를 쓰면 1-2초입니다 |
 | 전사 결과 글자가 문서와 조금 다름 | **정상입니다.** 하드웨어·라이브러리 버전에 따라 몇 글자 달라질 수 있습니다. 특이사항 추출 결과는 같아야 합니다 |
 | `python` 명령이 없음 | 가상환경을 켜지 않으셨습니다. `source .venv/bin/activate` |
 | `GEMINI_API_KEY 가 설정되지 않았습니다` | 기준선 비교(§5.5)에만 필요합니다. **개선안만 돌린다면 무시하세요** |
-| Gemini 호출이 429로 실패 | 무료 티어는 **모델당 하루 20건**입니다. [evaluation.md](docs/evaluation.md) §6.4 참고 |
+| Gemini 호출이 429로 실패 | 무료 티어는 **모델당 하루 20건**입니다. [evaluation.md](docs/evaluation.md) §6.6 참고 |
 
 **어떤 경우에도 인터넷 연결은 최초 1회만 필요합니다** (모델 내려받기). 그 뒤로는 완전 오프라인으로 동작합니다.
 
@@ -614,8 +616,6 @@ GPU 환경에서 더 큰 모델까지 돌려볼 수 있다.
 
 ## 라이선스·출처
 
-| 항목 | 출처 / 라이선스 |
-|---|---|
 이 저장소의 코드·문서·생성 데이터는 **MIT 라이선스**입니다 ([LICENSE](LICENSE)).
 의존하는 모델·라이브러리는 각자의 라이선스를 따릅니다.
 
