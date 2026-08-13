@@ -297,8 +297,25 @@ cd poc-elder-care-local-ai
 
 공개 저장소라 로그인 없이 받아집니다.
 
-> **WSL2를 쓰신다면 `/mnt/c/...`(윈도우 드라이브)에 두지 마세요.**
-> 파일 접근이 몇 배 느려 모델 로딩이 답답해집니다. `cd ~` 로 이동한 뒤 받으세요.
+> ### 🪟 WSL2 사용자는 **받는 위치가 중요합니다**
+>
+> 반드시 **`cd ~` 먼저** 하고 받으세요.
+>
+> ```bash
+> cd ~ && git clone https://github.com/nike1137-svg/poc-elder-care-local-ai.git
+> ```
+>
+> `/mnt/c/...`(윈도우 드라이브)에 두면 WSL에서 파일 접근이 몇 배 느립니다.
+> 설치가 3~5분이 아니라 **10~20분**이 되고, 모델 로딩도 계속 답답합니다.
+>
+> 이미 `/mnt/c` 에 받으셨다면 옮기면 됩니다.
+>
+> ```bash
+> mv /mnt/c/Users/<사용자명>/poc-elder-care-local-ai ~/ && cd ~/poc-elder-care-local-ai
+> ```
+>
+> 가상환경(`.venv`)은 경로가 박혀 있어 같이 옮기면 깨집니다. 옮긴 뒤 지우고 다시 만드세요.
+> `rm -rf .venv` 후 아래 ③ 단계부터 다시 하면 됩니다.
 
 **② `ffmpeg`을 설치합니다.** 오디오 형식 변환에 반드시 필요합니다.
 
@@ -316,6 +333,23 @@ python3 -m venv .venv && source .venv/bin/activate && pip install -r requirement
 
 > ⚠️ 이 명령은 **저장소 폴더 안에서** 실행해야 합니다. `requirements.txt` 가 그 안에 있습니다.
 > `Could not open requirements file` 오류가 나면 ① 단계를 건너뛰신 겁니다.
+
+> ### ⏳ 멈춘 것처럼 보이는 구간이 있습니다 — 정상입니다
+>
+> 다운로드가 끝나면 아래 줄이 뜨고 **한동안 아무 출력이 없습니다.**
+>
+> ```
+> Installing collected packages: pytz, pydub, ... gradio
+> ```
+>
+> 패키지 105개를 실제로 푸는 단계인데 진행 표시가 없습니다.
+> PyTorch 하나가 압축 191MB라 여기서만 **3~5분**(WSL의 `/mnt/c` 에서는 **10~20분**) 걸립니다.
+>
+> 확인하고 싶으면 **다른 터미널**에서 크기가 늘고 있는지 보세요. 2.5GB 근처에서 끝납니다.
+>
+> ```bash
+> du -sh .venv
+> ```
 
 > 설치되는 PyTorch는 **CPU 전용 휠**입니다(`torch-2.13.0+cpu`). `requirements.txt` 상단의
 > `--extra-index-url` 이 그 역할을 합니다. GPU를 쓰실 거라면 그 줄을 지우고 설치하세요.
