@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-08-13 19:54:15",
+  "run_at": "2026-08-13 20:33:18",
   "backend": "whisper-small+prompt",
   "summary": {
     "total": 10,
@@ -17,7 +17,7 @@
       "error_detail": "말소리가 감지되지 않았습니다 (무음이거나 소음만 있음)",
       "text": "",
       "text_len": 0,
-      "latency_sec": 0.094,
+      "latency_sec": 0.095,
       "audio_duration_sec": 5.0,
       "signals_extracted": 0,
       "signal_labels": []
@@ -45,7 +45,7 @@
       "error_detail": "말소리가 감지되지 않았습니다 (무음이거나 소음만 있음)",
       "text": "",
       "text_len": 0,
-      "latency_sec": 0.108,
+      "latency_sec": 0.073,
       "audio_duration_sec": 6.0,
       "signals_extracted": 0,
       "signal_labels": []
@@ -59,7 +59,7 @@
       "error_detail": "",
       "text": "오늘은 무릎이 좀 시큰거려서 산책은 못 나갔다",
       "text_len": 25,
-      "latency_sec": 2.882,
+      "latency_sec": 2.912,
       "audio_duration_sec": 5.12,
       "signals_extracted": 2,
       "signal_labels": [
@@ -76,7 +76,7 @@
       "error_detail": "",
       "text": "오늘은 무릎이 시큰거리다",
       "text_len": 13,
-      "latency_sec": 2.596,
+      "latency_sec": 2.621,
       "audio_duration_sec": 2.0,
       "signals_extracted": 1,
       "signal_labels": [
@@ -92,7 +92,7 @@
       "error_detail": "",
       "text": "오늘은 무릎이 좀 시큰거려서 산책은 못 나갔다",
       "text_len": 25,
-      "latency_sec": 2.872,
+      "latency_sec": 2.845,
       "audio_duration_sec": 5.12,
       "signals_extracted": 2,
       "signal_labels": [
@@ -109,7 +109,7 @@
       "error_detail": "",
       "text": "안녕하세요, 한국인은 영어로 말하는 것입니다",
       "text_len": 24,
-      "latency_sec": 10.504,
+      "latency_sec": 13.328,
       "audio_duration_sec": 4.34,
       "signals_extracted": 0,
       "signal_labels": []
